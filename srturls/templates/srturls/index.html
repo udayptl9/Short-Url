@@ -1,0 +1,12 @@
+<h1>Welcome to short urls app</h1>
+<form method="POST">
+    {% csrf_token %}
+    <label>Title:  </label>
+    <input type="text" name="title"><br><br>
+    <label>Enter full url:  </label>
+    <input type="text" name="fullurl" style="width: 500px; height: 50px">
+    <button type="submit">Submit</button>
+    {% for url in urls %}
+        <h1>{{ url.title }}</h1><h3>http://localhost:8000/srturl/{{ url.id }}/</h3>
+    {% endfor %}
+</form>
